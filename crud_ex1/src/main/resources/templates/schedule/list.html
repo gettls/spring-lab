@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>스케줄 리스트</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../css/bootstrap.min.css"></link>
+</head>
+<body>
+	<hr class="my-5">
+	<div class="container"> 
+		<div class="5-py text-center"> <h2> 스케줄 리스트 </h2></div>
+		<div class="row">
+			<div class="col">
+				<button class="btn btn-primary float-end"
+						onclick="location.href='schedule/add'"
+						th:onclick="|location.href='@{|/schedule/${member.id}/add|}'|"
+						type="button"> 스케줄 등록 </button>
+			</div> 
+		</div>
+		<div>
+		<table class="table">
+			<thead>			
+			<tr>
+				<th>스케줄 이름</th>
+				<th>스케줄 날짜</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="schedule : ${schedules}">
+				<td><a th:text="${schedule.name}" th:href="@{|/schedule/${schedule.id}/edit|}">이름</a></td>
+				<td th:text="${#temporals.format(schedule.date, 'yyyy년 MM월 dd일 HH시 mm분')}">날짜</td>
+				<td>
+					<form method="post" th:action="@{|/schedule/${schedule.id}/remove|}">
+					<input id="remove" value="삭제" 
+					class="btn btn-primary" type="submit"/> 
+					</form>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+		</form>
+		<hr class="my-4">
+		<div class="row">
+			<div class="col">
+				<p th:text="|아이디 : *{member.loginId}|">아이디</p>
+				<p th:text="|이름 : *{member.name}|">이름</p>
+			</div>
+			<div class="col">
+				<button class="btn btn-primary float-end"
+						th:onclick="|location.href='@{/}'|"
+						type="button"> 뒤로
+				</button>
+			</div>
+		</div>
+	</div> 
+</body>
+</html>

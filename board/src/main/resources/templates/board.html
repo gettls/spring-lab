@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link th:href="@{/css/bootstrap.min.css}"
+	href="../css/bootstrap.min.css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="py-5 text-center"><h2> 게시판 </h2></div>
+	<div class="row">
+		<div class="col">
+			<button class="btn btn-primary float-end"
+			th:onclick="|location.href='@{create}'|"
+			type="button"> 게시글 등록
+			</button>
+		</div>
+	</div>
+	<div class="container">
+		<div>
+		<table class="table">
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>생성</th>
+				<th>수정</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="post: ${post}">
+				<td th:text="${post.title}"> 제목	</td>
+				<td th:text="${post.createTime}">생성 시간</td>
+				<td th:text="${post.modifiedTime}">수정 시간</td>
+				<td><button
+					style="font-size:15px"
+					class="btn btn-secondary btn-lg"
+					th:onclick="|location.href='@{|/edit/${post.id}|}'|">
+					수정</button>
+				</td>
+				<td><button
+					style="font-size:15px"
+					class="btn btn-secondary btn-lg"
+					th:onclick="|location.href='@{|/delete/${post.id}|}'|">
+					삭제</button>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+	</div>
+</body>
+</html>

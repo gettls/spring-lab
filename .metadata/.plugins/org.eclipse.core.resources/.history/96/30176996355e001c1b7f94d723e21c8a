@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+	<meta charset="utf-8">
+	<link th:href="@{/css/bootstrap.min.css}"
+		href="../css/bootstrap.min.css" rel="stylesheet">
+	<title>Insert title here</title>
+</head>
+<body>
+	<hr class="my-5">
+	<div class="container">
+		<div class="5-py text-center"> 게시글 작성 </div>
+		<form th:action method="post" th:object="${post}">
+			<div>
+				<label for="title">제목</label>
+				<input type="text" id="title"
+				class="form-control" th:field="*{title}">
+			</div>
+			
+			<div>
+				<label for="title">내용</label>
+				<textarea></textarea>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+package lab.board.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import lab.board.domain.Post;
+import lab.board.form.CreateForm;
+import lab.board.repository.PostRepository;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PostService {
+	
+	private final PostRepository postRepository;
+	
+	@org.springframework.transaction.annotation.Transactional
+	public void create(CreateForm form) {
+		Post post = Post.builder()
+				.title(form.getTitle())
+				.contents(form.getContents())
+				.build();
+		postRepository.save(post);
+	}
+	
+}

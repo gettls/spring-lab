@@ -1,0 +1,19 @@
+package lab.board.repository;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.stereotype.Repository;
+
+import lab.board.domain.Post;
+
+
+@Repository
+public class PostRepository {
+
+	private final EntityManager em;
+	
+	public void save(Post post) {
+		
+	}
+	
+}

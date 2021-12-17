@@ -1,0 +1,8 @@
+package lab.board.form;
+
+import lombok.Data;
+
+@Data
+public class CreateForm {
+
+}

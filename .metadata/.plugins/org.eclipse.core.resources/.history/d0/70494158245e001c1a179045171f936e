@@ -1,0 +1,14 @@
+package lab.board.service;
+
+import org.springframework.stereotype.Service;
+
+import lab.board.form.CreateForm;
+
+@Service
+public class PostService {
+	
+	void create(CreateForm form) {
+		
+	}
+	
+}

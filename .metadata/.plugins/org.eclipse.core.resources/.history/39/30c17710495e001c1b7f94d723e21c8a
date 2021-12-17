@@ -1,0 +1,11 @@
+package lab.board.form;
+
+import lab.board.domain.BaseEntity;
+import lombok.Data;
+
+@Data
+public class EditForm extends BaseEntity{
+	
+	private String title;
+	private String contents;
+}

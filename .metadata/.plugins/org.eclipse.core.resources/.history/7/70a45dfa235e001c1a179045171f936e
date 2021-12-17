@@ -1,0 +1,5 @@
+package lab.board.service;
+
+public class PostService {
+
+}

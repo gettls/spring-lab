@@ -1,0 +1,37 @@
+package lab.board.domain;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+public class Post {
+	
+	@Id @GeneratedValue
+	private Long id;
+	private String title;
+	private String contents;
+	private LocalDateTime createTime;
+	private LocalDateTime modifiedTime;
+	
+	protected public Post() {
+		// TODO Auto-generated constructor stub
+	}() {
+	}
+
+	@Builder
+	public Post(String title, String contents, LocalDateTime createTime, LocalDateTime modifiedTime) {
+		this.title = title;
+		this.contents = contents;
+		this.createTime = createTime;
+		this.modifiedTime = modifiedTime;
+	}
+}	
