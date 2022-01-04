@@ -9,6 +9,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -24,9 +25,12 @@ public class BaseEntity {
 	@CreatedDate
     @Column(updatable = false)
     private String createTime;
-
     @LastModifiedDate
     private String modifiedTime;
+    
+    @CreatedBy
+    @Column(updatable = false)
+    private String createdBy;
     
     @PrePersist
     public void onPrePersist() {

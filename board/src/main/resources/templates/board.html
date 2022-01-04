@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="utf-8">
 <link th:href="@{/css/bootstrap.min.css}"
@@ -10,9 +11,21 @@
 	<div class="py-5 text-center"><h2> 게시판 </h2></div>
 	<div class="row">
 		<div class="col">
-			<button class="btn btn-primary float-end"
-			th:onclick="|location.href='@{create}'|"
+			<button class="btn btn-primary float-end m-2"
+			th:onclick="|location.href='@{board/create}'|"
 			type="button"> 게시글 등록
+			</button>
+			<button
+			sec:authorize="isAuthenticated()"
+			class="btn btn-primary float-end m-2"
+			th:onclick="|location.href='@{member/logout}'|"
+			type="button"> 로그아웃
+			</button>
+			<button
+			sec:authorize="isAnonymous()"
+			class="btn btn-primary float-end m-2"
+			th:onclick="|location.href='@{member/logout}'|"
+			type="button"> 로그인
 			</button>
 		</div>
 	</div>
@@ -33,16 +46,22 @@
 				<td th:text="${post.title}"> 제목	</td>
 				<td th:text="${post.createTime}">생성 시간</td>
 				<td th:text="${post.modifiedTime}">수정 시간</td>
-				<td><button
+				<td>
+					<sec:authentication property="principal.username" var="uesrname"/>
+					<button
+					th:if="${post.createdBy == username}"
 					style="font-size:15px"
 					class="btn btn-secondary btn-lg"
-					th:onclick="|location.href='@{|/edit/${post.id}|}'|">
+					th:onclick="|location.href='@{|/board/edit/${post.id}|}'|">
 					수정</button>
 				</td>
-				<td><button
+				<td>
+					<sec:authentication property="principal.username" var="uesrname"/>
+					<button
+					th:if="${post.createdBy == username}"
 					style="font-size:15px"
 					class="btn btn-secondary btn-lg"
-					th:onclick="|location.href='@{|/delete/${post.id}|}'|">
+					th:onclick="|location.href='@{|/board/delete/${post.id}|}'|">
 					삭제</button>
 				</td>
 			</tr>
@@ -51,4 +70,9 @@
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript">
+	
+</script>
+
 </html>
