@@ -3,6 +3,10 @@ package lab.board.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lab.board.config.auth.MemberPrincipal;
 import lab.board.domain.Member;
@@ -32,9 +37,18 @@ public class PostController {
 	private final PostService postService;
 	
 	@GetMapping()
-	public String board(Model model) {
-		List<Post> post = postService.findAll();
-		model.addAttribute("post", post);
+	public String board(Model model, 
+			@PageableDefault(size = 3, sort="createTime", direction = Direction.DESC) Pageable pageable){
+		
+//		Page<Post> listPage = postService.list(pageable); // 불러올 페이지의 데이터
+//		int totalPage = listPage.getTotalPages();
+//		model.addAttribute("totalPage",totalPage);
+//		model.addAttribute("post", listPage.getContent());
+		
+		// paging
+		model.addAttribute("totalPage",postService.list(pageable).getTotalPages());
+		model.addAttribute("post", postService.list(pageable));
+		
 		return "board";
 	}
 	
