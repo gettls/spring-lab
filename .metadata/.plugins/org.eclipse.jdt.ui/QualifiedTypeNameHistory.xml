@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
-    <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-    <fullyQualifiedTypeName name="org.springframework.security.access.prepost.PostAuthorize"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
-    <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
-    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
-    <fullyQualifiedTypeName name="lab.board.dto.MemberAddDto"/>
-    <fullyQualifiedTypeName name="lab.board.service.MemberService"/>
-    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
-    <fullyQualifiedTypeName name="lab.board.dto.MemberLoginDto"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.annotation.AuthenticationPrincipal"/>
     <fullyQualifiedTypeName name="lab.board.config.auth.MemberPrincipal"/>
@@ -29,9 +11,7 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="racing_game.service.RegisterService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="racing_game.domain.Car"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="racing_game.service.RaceService"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
@@ -57,7 +37,27 @@
     <fullyQualifiedTypeName name="abstractFactoryPattern.factory.ClothesAbstractFactory"/>
     <fullyQualifiedTypeName name="abstractFactoryPattern.factory.DressFactory"/>
     <fullyQualifiedTypeName name="abstractFactoryPattern.factory.JeanFactory"/>
+    <fullyQualifiedTypeName name="abstractFactoryPattern.product.Clothes"/>
     <fullyQualifiedTypeName name="abstractFactoryPattern.product.Jean"/>
     <fullyQualifiedTypeName name="abstractFactoryPattern.product.Dress"/>
-    <fullyQualifiedTypeName name="abstractFactoryPattern.product.Clothes"/>
+    <fullyQualifiedTypeName name="java.lang.Cloneable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="prototypePattern.Employees"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="adapterPattern.MediaPlayer"/>
+    <fullyQualifiedTypeName name="adapterPattern.MediaPackage"/>
+    <fullyQualifiedTypeName name="adapterPattern.Adapter"/>
+    <fullyQualifiedTypeName name="adapterPattern.HairDryer"/>
+    <fullyQualifiedTypeName name="adapterPattern.AirConditional"/>
+    <fullyQualifiedTypeName name="adapterPattern.Electornic110V"/>
+    <fullyQualifiedTypeName name="adapterPattern.Electronic110V"/>
+    <fullyQualifiedTypeName name="adapterPattern.Adapter110Vto220V"/>
+    <fullyQualifiedTypeName name="adapterPattern.Electronic220V"/>
+    <fullyQualifiedTypeName name="bridgePattern.PlayGameAPI"/>
+    <fullyQualifiedTypeName name="adapterPattern.abstraction.GamePlayer"/>
+    <fullyQualifiedTypeName name="bridgePattern.concreteImplementor.LOL"/>
+    <fullyQualifiedTypeName name="bridgePattern.Implemetor.PlayGameAPI"/>
+    <fullyQualifiedTypeName name="bridgePattern.abstraction.GamePlayer"/>
+    <fullyQualifiedTypeName name="bridgePattern.refinedAbstraction.OnlineGamePlayer"/>
+    <fullyQualifiedTypeName name="bridgePattern.concreteImplementor.Overwatch"/>
 </qualifiedTypeNameHistroy>
